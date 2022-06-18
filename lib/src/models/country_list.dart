@@ -1,5 +1,7 @@
 /// [Countries] has a static method [countryList] that returns list of Map for most country around the world.
 class Countries {
+  const Countries._();
+
   /// returns `List<Map<String, dynamic>` of countries which contains
   ///  *  num_code
   ///  *  alpha_2_code
