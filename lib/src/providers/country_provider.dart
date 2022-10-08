@@ -6,6 +6,8 @@ const String PropertyName = 'alpha_2_code';
 /// [CountryProvider] provides helper classes that involves manipulations.
 /// of Countries from [Countries.countryList]
 class CountryProvider {
+  const CountryProvider._();
+
   /// Get data of Countries.
   ///
   /// Returns List of [Country].

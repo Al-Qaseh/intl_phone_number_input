@@ -3,6 +3,8 @@ import 'package:libphonenumber_plugin/libphonenumber_plugin.dart' as p;
 
 /// A wrapper class [PhoneNumberUtil] that basically switch between plugin available for `Web` or `Android or IOS` and `Other platforms` when available.
 class PhoneNumberUtil {
+  const PhoneNumberUtil._();
+
   /// Accepts [phoneNumber] and [isoCode]
   /// Returns [Future<String>]
   static Future<String?> getNameForNumber(
@@ -93,6 +95,8 @@ class RegionInfo {
 
 /// [PhoneNumberTypeUtil] helper class for `PhoneNumberType`
 class PhoneNumberTypeUtil {
+  const PhoneNumberTypeUtil._();
+
   /// Returns [PhoneNumberType] for index [value]
   static PhoneNumberType getType(int? value) {
     switch (value) {
