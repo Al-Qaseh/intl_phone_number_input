@@ -63,19 +63,24 @@ class _Flag extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return country != null && showFlag!
-        ? Container(
+        //CHANGELOG: changed to DecoratedBox instead of Container for better performance
+        ? DecoratedBox(
+            decoration: const BoxDecoration(),
             child: useEmoji!
                 ? Text(
                     Utils.generateFlagEmojiUnicode(country?.alpha2Code ?? ''),
-                    style: Theme.of(context).textTheme.headline5,
+                    style: Theme.of(context).textTheme.headlineSmall,
                   )
-                : Image.asset(
-                    country!.flagUri,
-                    width: 32.0,
-                    package: 'intl_phone_number_input',
-                    errorBuilder: (context, error, stackTrace) {
-                      return SizedBox.shrink();
-                    },
+                : ClipRRect(
+                    borderRadius: BorderRadius.circular(4),
+                    child: Image.asset(
+                      country!.flagUri,
+                      width: 32.0,
+                      package: 'intl_phone_number_input',
+                      errorBuilder: (context, error, stackTrace) {
+                        return SizedBox.shrink();
+                      },
+                    ),
                   ),
           )
         : SizedBox.shrink();
